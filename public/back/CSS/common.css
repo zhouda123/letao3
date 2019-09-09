@@ -97,9 +97,11 @@ ul {
   left: 0;
   top: 0;
   transition: all 1s;
+  line-height: 50px;
+  z-index: 666;
 }
 .lt_topbar.hidemenu {
-  padding-left: 0;
+  padding-left: 0px;
 }
 .lt_topbar .icon_left,
 .lt_topbar .icon_right {
@@ -115,4 +117,11 @@ ul {
   width: 48%;
   height: 400px;
   background-color: skyblue;
+}
+
+/* 让表格内容水平垂直居中 */
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
 }
