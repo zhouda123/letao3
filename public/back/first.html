@@ -70,14 +70,28 @@
           <li><a href="index.html">管理系统</a></li>
           <li><a href="#">首页</a></li>
         </ol>
-        <!-- Button trigger modal -->
-        <!-- date-toggle 切换模态框
-              date-target="#myModal"用域指定切换的具体哪个模态框 通过id关联 -->
+        <div class="li_content">
+          <button class="btn btn-default  mt-20" id="addBtn">添加分类</button>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th width="20%">序号</th>
+                <th width="80%">一级分类名</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--挖坑 -->
+            </tbody>
+          </table>
+          <div class="text-right">
+            <ul id="paginator"></ul>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Modal -->
     <!-- 模态框大小:modal-lg  默认    modal-sm 小 -->
-    <div class="modal fade" id="myModal" tabindex="-1">
+    <div class="modal fade" id="myModal">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -102,11 +116,25 @@
         </div>
       </div>
     </div>
+
+    <script type="text/html" id="firstTpl">
+      {{each rows v i}}}
+      <tr>
+          <td>
+            {{i+1+(page-1)*size}}
+          </td>
+          <td>{{ v.categoryName}}</td>
+        </tr>
+        {{/each}}
+    </script>
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/isLogin.js"></script>
+    <!-- <script src="./js/isLogin.js"></script> -->
+    <script src="./js/first.js"></script>
   </body>
 </html>
